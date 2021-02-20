@@ -2,7 +2,27 @@
 <html>
 <body>
 <style>
+
+
 h1 {text-align: center;}
+
+
+p {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#Header {
+  background-color: lightgreen;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+h3.b {
+  font-style: italic;
+}
+
 img {
   display: block;
   margin-left: auto;
@@ -10,7 +30,7 @@ img {
   }
 </style>
 
-<h1>Breaking Bad IMDb Reviews</h1>
+<h1 id="Header">Breaking Bad IMDb Reviews</h1>
 
 
 
@@ -18,18 +38,24 @@ img {
 
 <p>The television show Breaking Bad, created by Vince Gilligan is widely considered as one of the best TV series of all time. Hailed as a masterpiece by critics and fans alike, Breaking Bad boasts exceptionally high ratings on IMDb. But what makes it so beloved? By examining IMDb reviews for each season and each episode, in addition to my highly speculative and subjective analysis, perhaps we can gain some insights. The dataset used to conduct analysis can be found here: <a href="https://www.kaggle.com/twintyone/breaking-bad-ratings" target="_blank">Breaking Bad IMDb ratings, votes and US views</a> </p>
 
+<h3 class = "b">IMDb Average Rating per Season</h3>
+
 <p>First, let’s take a look at IMDb reviews per season. Using the data analysis library pandas, and the data visualization library seaborn, we can calculate the average IMDb rating for each breaking bad episode in each season. Then, we can visualize the data using a bar graph in seaborn.<p>
 <img src="Rating by Season.png" style="width:50%;">
 The overall trend seems to be that the show got better and better over time throughout each season, like a fine wine. Squisitissimo! The show starts off quite strong with a rating of 8.77. To reiterate, the rating for each season was calculated by taking the average of each episode in a single season. In the fifth and final season, the show has a remarkable 9.4 rating; one of the highest in the entire IMDb database. Perhaps this upward trend in quality reflected by the increasing ratings over time is a reason people love this show so much. There is nothing worse than a good show that ends badly. Looking at you Game of Thrones...</p>
 
+<h3 class = "b">IMDb Rating per Episode (chronological)</h3>
 <p>Next we can examine the ratings of each episode in chronological order.
   <img src="Rating by Episode.png" style="width:50%;">
 The IMDb ratings for each Breaking Bad episode in chronological order also communicate the idea that the series tended to get better over time. We do see a few dips in single episode rating, but it’s important to keep in mind that the lowest a single episode was ever rated was a 7.8; not too bad. To put this in perspective, the shows The Sopranos and The Wire, both considered to be in contention for best show of all time, each had a 7.9 as their lowest rated single episode on IMDb. We can compare Breaking Bad’s lowest single episode score of 7.8 to Game of Throne’s lowest single episode score of 4 to get perspective on how Breaking Bad consistently received good ratings over the course of the show.</p>
 
+<h3 class = "b">IMDb Rating per Episode (ranked)</h3>
 <p>Finally, we can examine the IMDb ratings for each single episode of Breaking Bad, sorted by rating.
 
   <img src="Rating by Title.png" style="width:60%;">
 <p>One of the most striking aspects to these episode ratings is that of the top 5 rated episodes, 4 of them are the last 4 episodes of the entire series. This furthers the idea that Breaking Bad truly had a masterful final arc in the eyes of IMDb reviewers. The episode Ozymandias, the 3rd to last episode in the series, received a perfect 10 rating out of 132,000 raters. The series finale of Breaking Bad, Felina, received a rating of 9.9. Compare this with a show such as Game of Thrones, whose finale received a score of 4. Ouch.</p>
+
+<h3>Final Thoughts</h3>
 
 <p>By strictly looking at IMDb ratings of each Breaking Bad season and episode, it would appear that the show's reputation for being one of the best shows of all time could be partially attributed to its highly rated final season, exceptionally strong final 4 episodes, and its general trend of getting better as the show progressed. Of course, to get a better idea of why the show is regarded so highly, one needs to actually watch the show. So if you haven’t already, do yourself a favor and go watch Breaking Bad! </p>
 
