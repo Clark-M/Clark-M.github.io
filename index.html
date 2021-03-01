@@ -5,14 +5,12 @@
 <style>
 * {box-sizing: border-box}
 
-/* Set height of body and the document to 100% */
 body, html {
   height: 100%;
   margin: 0;
   font-family: Arial;
 }
 
-/* Style tab links */
 .tablink {
   background-color: #555;
   color: white;
@@ -27,7 +25,7 @@ body, html {
   background-color: #777;
 }
 
-/* Style the tab content (and add height:100% for full page content) */
+
 .tabcontent {
   color: black;
   display: none;
@@ -38,6 +36,8 @@ body, html {
 </style>
 </head>
 <body>
+
+<!-- Creates buttons that switch between content tabs. Taken from w3 schools. -->
 
 <button class="tablink" onclick="openPage('Home', this, 'blue')"id="defaultOpen">Home</button>
 <button class="tablink" onclick="openPage('About Me', this, 'blue')" >About Me</button>
@@ -71,6 +71,8 @@ body, html {
   <p>Here's my email: dmousaw@gmail.com</p>
 </div>
 
+<!-- This following script creates the functionality for highlighting clicked tabs and switching between tabs. Taken from w3 schools here: https://www.w3schools.com/howto/howto_js_tabs.asp -->
+
 <script>
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
@@ -86,7 +88,6 @@ function openPage(pageName,elmnt,color) {
   elmnt.style.backgroundColor = color;
 }
 
-// Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
 
