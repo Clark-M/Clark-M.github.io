@@ -1,94 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clark Mousaw</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 20%;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<div class="header_img"><a href="newsite.html" onfocus="this.blur()"><img src="clarkmousaw.jpg" class = center height="50" width="50"></a></div>
+
+
 <style>
-* {box-sizing: border-box}
 
-/* Set height of body and the document to 100% */
-body, html {
-  height: 100%;
+ul {
+  list-style-type: none;
   margin: 0;
-  font-family: Arial;
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Style tab links */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 20px;
-  width: 25%;
+li a {
+  display: block;
+  text-align: center;
+  padding: 5px;
 }
-
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: black;
-  display: none;
-  padding: 70px 20px;
-  height: 100%;
-}
-
 </style>
 </head>
 <body>
 
-<button class="tablink" onclick="openPage('Home', this, 'blue')"id="defaultOpen">Home</button>
-<button class="tablink" onclick="openPage('About Me', this, 'blue')" >About Me</button>
-<button class="tablink" onclick="openPage('Portfolio', this, 'blue')">Portfolio</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+<ul>
+  <li><a href="aboutme.html">About Me</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
 
-<div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>Hi! I'm Clark.</p>
-</div>
+<div class="container-fluid bg-3 text-center">
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div><br>
 
-<div id="About Me" class="tabcontent">
-  <h3>About Me</h3>
-  <p>I am a current student at CU Boulder, a military veteran, and a cyber security professional with a background in vulnerability assessment and key management infrastructure. I also have experience in penetration testing, risk management, and information system (IS) incident resolution.</p>
-
-  <p>While studying information science at CU, I learned how apply skills such as data mining, machine learning, design, and information visualization in order to solve real-world issues. I am especially interested in applying data science principles and practices to research topics related to information security and cyber security. </p>
-
-  <a href="https://drive.google.com/file/d/1Mh0_GQ3fm7cIgj0ufDXCX_pzusDBPwVU/view?usp=sharing" target="_blank">Check out my resume!</a>
-
-
-</div>
-
-<div id="Portfolio" class="tabcontent">
-  <h3>Past Projects</h3>
-  <p><a href="https://clark-m.github.io/wa3.html" target="_blank">Wall Street Bets and Data Privacy</a></p>
-  <p><a href="https://clark-m.github.io/wa4.html" target="_blank">Breaking Bad Analysis</a></p>
-</div>
-
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <p>Here's my email: dmousaw@gmail.com</p>
-</div>
-
-<script>
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
+<div class="container-fluid bg-3 text-center">
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div><br><br>
 
 </body>
 </html>
