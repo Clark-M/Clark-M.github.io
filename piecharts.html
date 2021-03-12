@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html>
+<style>
+h1 {text-align: center;}
+h3 {text-align: center; padding-top: 50px}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+
+<body>
+
+  <h1>Pie Charts</h1>
+  <h3>Version 1</h3>
+  <p>The first version is a very basic pie chart with data values.</p>
+
+
+
+</body>
+</html>
+
+<canvas id="pie-chart" width="800" height="450"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      datasets: [{
+        data: [2,3,4,5,6]
+      }]
+    },
+});
+
+</script>
+
+<html>
+<body>
+
+  <h3>Version 2</h3>
+  <p>Version 2 features a labels, display text, and colors that correlate to the type of pie</p>
+
+</body>
+</html>
+
+<canvas id="pie-chart2" width="800" height="450"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+new Chart(document.getElementById("pie-chart2"), {
+    type: 'pie',
+    data: {
+      labels: ["Pecan", "Blueberry", "Pumpkin", "Lemon Meringue", "Apple"],
+      datasets: [{
+        label: "pies",
+        backgroundColor: ["#993300", "#3333ff","#ff9900","#ffff00","#ff0000"],
+        data: [2,3,4,5,6],
+        borderColor: "000000",
+        borderWidth: "1",
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Number of pies I purchased yesterday to prepare for snowpocalypse 2021'
+      }
+    }
+});
+
+</script>
+
+<html>
+<body>
+
+  <h3>Version 3</h3>
+  <p>Version 3 includes added interactivity, using the hoverBorderColor, hoverBorderWidth, and hoverBackgroundColor tooltips. When a user hovers over a specific segment of pie, the segment will slightly change color and change the border width to give an interactive feel. The title text was also enlarged.</p>
+
+</body>
+</html>
+
+<canvas id="pie-chart3" width="800" height="450"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+new Chart(document.getElementById("pie-chart3"), {
+    type: 'pie',
+    data: {
+      labels: ["Pecan", "Blueberry", "Pumpkin", "Lemon Meringue", "Apple"],
+      datasets: [{
+        label: "pies",
+        backgroundColor: ["#993300", "#3333ff","#ff9900","#ffff00","#ff0000"],
+        data: [2,3,4,5,6],
+        borderColor: "000000",
+        borderWidth: "2",
+        hoverBorderColor: "000000",
+        hoverBorderWidth: "7",
+        hoverBackgroundColor: ["#d47c50", "#6161f2","#ffbb54","#ffff5c","#ff6161"]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        fontSize: 18,
+        text: 'Number of pies I purchased yesterday to prepare for snowpocalypse 2021'
+      }
+    }
+});
+
+</script>
+
+hello hello
