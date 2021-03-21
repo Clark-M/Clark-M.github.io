@@ -8,14 +8,14 @@ window.onload = function () {
 var dataPoints = [];
 var chart = new CanvasJS.Chart("chartContainer",{
 	title:{
-		text:"Rendering Chart with dataPoints from External JSON"
+		text:"Police something"
 	},
 	data: [{
-		type: "line",
+		type: "bar",
 		dataPoints : dataPoints,
 	}]
 });
-$.getJSON("https://clark-m.github.io/test/datapoints.json", function(data) {
+$.getJSON("https://clark-m.github.io/police/police_data_test.json", function(data) {
 	$.each(data, function(key, value){
 		dataPoints.push({x: value[0], y: parseInt(value[1])});
 	});
