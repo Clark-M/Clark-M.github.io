@@ -15,7 +15,7 @@ var chart = new CanvasJS.Chart("chartContainer",{
 		dataPoints : dataPoints,
 	}]
 });
-$.getJSON("https://clark-m.github.io/test/datapointss.json", function(data) {
+$.getJSON("https://clark-m.github.io/test/datapoints.json", function(data) {
 	$.each(data, function(key, value){
 		dataPoints.push({x: value[0], y: parseInt(value[1])});
 	});
