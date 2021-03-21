@@ -1,14 +1,37 @@
-<canvas id="myChart"></canvas>
+<!doctype html>
+
+<html>
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {text-align: center;}
+h3 {text-align: center; padding-top: 50px}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+<body>
+  <h1>Denver Policing Data</h1>
+  <p>Let's explore policing outcomes in different precincts in Denver. Using a policing dataset from the month of November 2012, we can look at the percentage of police stops that end in arrest, and police stops end with just a warning. Here is an image showing the different police precincts.</p>
+  <img src="https://clark-m.github.io/police/precinct.jpg" class="center" style="width:500px;height:300px;">
+  <h3>Percentage of Stops Ending in Arrest</h3>
+<p>The chart below shows how many police stops (vehicle and pedestrian) ended up in an arrest. Each bar represents a defferent police precinct</p>
+
+
+</body>
+</html>
+
+<canvas id="myChart1"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
 
-$.getJSON("https://clark-m.github.io/test/some_data.json", function(data_from_file){
+$.getJSON("https://clark-m.github.io/police/police_data_arrests.json", function(data_from_file){
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-    console.log("hey you got data")
-    console.log(data_from_file)
+    var ctx = document.getElementById('myChart1').getContext('2d');
 
     var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -16,12 +39,12 @@ $.getJSON("https://clark-m.github.io/test/some_data.json", function(data_from_fi
 
         // The data for our dataset
         data: {
-            labels: ['x', 'y'],
+            labels: ['Precinct 1, West Colfax/LoHi', 'Precinct 2, East Colfax/5 Points', 'Precinct 3, Wash Park, Cherry Creek', 'Precinct 4, South Federal Blvd/Harvey Park', 'Precinct 5, Central Park, Montebello', 'Precinct 6, Downtown'],
             datasets: [{
-                label: 'Fake data',
-                backgroundColor: 'rgb(255, 99, 132)',
+                label: 'Percentage of stops ending in arrest',
+                backgroundColor: 'rgb(200, 70, 80)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [data_from_file["x"], data_from_file["y"]],
+                data: [data_from_file["1"], data_from_file["2"], data_from_file["3"], data_from_file["4"], data_from_file["5"], data_from_file["6"]],
             }]
         },
 
@@ -33,7 +56,65 @@ $.getJSON("https://clark-m.github.io/test/some_data.json", function(data_from_fi
                     stacked: true,
                     ticks: {
                         min: 0, // minimum value
-                        max: 10 // maximum value
+                        max: .20 // maximum value
+                    }
+                }]
+            }
+        }
+    });
+
+})
+</script>
+
+<html>
+<style>
+h1 {text-align: center;}
+h3 {text-align: center; padding-top: 50px}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+<body>
+  <h3>Percentage of Stops Ending with a Warning</h3>
+<p>The chart below shows how many police stops (vehicle and pedestrian) ended up with just a warning. Each bar represents a defferent police precinct</p>
+
+
+</body>
+</html>
+
+<canvas id="myChart2"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+$.getJSON("https://clark-m.github.io/police/police_data_warnings.json", function(data_from_file){
+
+    var ctx = document.getElementById('myChart2').getContext('2d');
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: ['Precinct 1, West Colfax/LoHi', 'Precinct 2, East Colfax/5 Points', 'Precinct 3, Wash Park, Cherry Creek', 'Precinct 4, South Federal Blvd/Harvey Park', 'Precinct 5, Central Park, Montebello', 'Precinct 6, Downtown'],
+            datasets: [{
+                label: 'Percentage of stops ending in a warning',
+                backgroundColor: 'rgb(25, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [data_from_file["1"], data_from_file["2"], data_from_file["3"], data_from_file["4"], data_from_file["5"], data_from_file["6"]],
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+        scales: {
+                yAxes: [{
+                    display: true,
+                    stacked: true,
+                    ticks: {
+                        min: 0, // minimum value
+                        max: .20 // maximum value
                     }
                 }]
             }
