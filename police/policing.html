@@ -56,7 +56,7 @@ $.getJSON("https://clark-m.github.io/police/police_data_arrests.json", function(
                     stacked: true,
                     ticks: {
                         min: 0, // minimum value
-                        max: .20 // maximum value
+                        max: 20 // maximum value
                     }
                 }]
             }
@@ -114,7 +114,7 @@ $.getJSON("https://clark-m.github.io/police/police_data_warnings.json", function
                     stacked: true,
                     ticks: {
                         min: 0, // minimum value
-                        max: .20 // maximum value
+                        max: 20 // maximum value
                     }
                 }]
             }
@@ -130,7 +130,7 @@ $.getJSON("https://clark-m.github.io/police/police_data_warnings.json", function
 <p>The two charts offer interesting insights. it appears there are clearly districts where arrests are more likely to occur during police stops, primarily district 6, Downtown and district 2, the East Colfax/5 Points area. Downtown, 18% of stops ended with an arrest, compared to 11% in the far more affluent Cherry Creek/Wash Park area. Even more interesting, if you look at police stops that end with the individual being let off with a warning, we see a different story. A mere 5% of stops occuring downtown end with a warning, but in the more affluent area of Cherry Creek/Wash Park, we see 15% of police stops ending with the individual being let off on a warning. </p>
 <p>It's hard not to look at these charts and think come to the conclusion that more affluent areas are policed more leniently than areas that have a higher homeless/low income population. However, more research would need to be done to soundly come to this conclusion. For example, it would be interesting to add and compare average income with this analysis to gain additional insights. Also, we could look further into the individual districts and investigate arrest rates in the individual precincts that make up each district. </p>
 
-<p>The code used to conduct this analysis can be found here: </p>
+<p>The analysis was conducted/coded using Python and Pandas. Data was grouped by policing district and outcomes of police stops by district were compared. <a href="https://clark-m.github.io/police/Policing%20Code.html">The code used to conduct this analysis can be found here.</a> </p>
 
 
 </body>
