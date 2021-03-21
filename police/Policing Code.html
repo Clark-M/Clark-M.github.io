@@ -14809,6 +14809,157 @@ Name: arrest_made, dtype: int64</pre>
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#round percentage values and multiply by 100 to reflect % values</span>
+<span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;arrest%&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;arrest%&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;arrest%&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;arrest%&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;warning%&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;warning%&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;warning%&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">by_district</span><span class="p">[</span><span class="s1">&#39;warning%&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">by_district</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>arrest_made</th>
+      <th>citation_issued</th>
+      <th>warning_issued</th>
+      <th>counts</th>
+      <th>arrest%</th>
+      <th>warning%</th>
+    </tr>
+    <tr>
+      <th>district</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>200</td>
+      <td>207</td>
+      <td>141</td>
+      <td>1158</td>
+      <td>17.3</td>
+      <td>12.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>254</td>
+      <td>209</td>
+      <td>155</td>
+      <td>1338</td>
+      <td>19.0</td>
+      <td>11.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>113</td>
+      <td>256</td>
+      <td>151</td>
+      <td>968</td>
+      <td>11.7</td>
+      <td>15.6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>149</td>
+      <td>181</td>
+      <td>138</td>
+      <td>1158</td>
+      <td>12.9</td>
+      <td>11.9</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>60</td>
+      <td>111</td>
+      <td>67</td>
+      <td>571</td>
+      <td>10.5</td>
+      <td>11.7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>186</td>
+      <td>84</td>
+      <td>57</td>
+      <td>1004</td>
+      <td>18.5</td>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>None</th>
+      <td>23</td>
+      <td>16</td>
+      <td>23</td>
+      <td>166</td>
+      <td>13.9</td>
+      <td>13.9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14817,7 +14968,7 @@ Name: arrest_made, dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#create json data from pandas df</span>
@@ -14838,13 +14989,13 @@ Name: arrest_made, dtype: int64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;{&#34;arrest_made&#34;:{&#34;1&#34;:200,&#34;2&#34;:254,&#34;3&#34;:113,&#34;4&#34;:149,&#34;5&#34;:60,&#34;6&#34;:186,&#34;7&#34;:0,&#34;None&#34;:23},&#34;citation_issued&#34;:{&#34;1&#34;:207,&#34;2&#34;:209,&#34;3&#34;:256,&#34;4&#34;:181,&#34;5&#34;:111,&#34;6&#34;:84,&#34;7&#34;:1,&#34;None&#34;:16},&#34;warning_issued&#34;:{&#34;1&#34;:141,&#34;2&#34;:155,&#34;3&#34;:151,&#34;4&#34;:138,&#34;5&#34;:67,&#34;6&#34;:57,&#34;7&#34;:0,&#34;None&#34;:23},&#34;counts&#34;:{&#34;1&#34;:1158,&#34;2&#34;:1338,&#34;3&#34;:968,&#34;4&#34;:1158,&#34;5&#34;:571,&#34;6&#34;:1004,&#34;7&#34;:2,&#34;None&#34;:166},&#34;arrest%&#34;:{&#34;1&#34;:0.1727115717,&#34;2&#34;:0.1898355755,&#34;3&#34;:0.1167355372,&#34;4&#34;:0.1286701209,&#34;5&#34;:0.1050788091,&#34;6&#34;:0.1852589641,&#34;7&#34;:0.0,&#34;None&#34;:0.1385542169},&#34;warning%&#34;:{&#34;1&#34;:0.121761658,&#34;2&#34;:0.1158445441,&#34;3&#34;:0.1559917355,&#34;4&#34;:0.1191709845,&#34;5&#34;:0.1173380035,&#34;6&#34;:0.0567729084,&#34;7&#34;:0.0,&#34;None&#34;:0.1385542169}}&#39;</pre>
+<pre>&#39;{&#34;arrest_made&#34;:{&#34;1&#34;:200,&#34;2&#34;:254,&#34;3&#34;:113,&#34;4&#34;:149,&#34;5&#34;:60,&#34;6&#34;:186,&#34;7&#34;:0,&#34;None&#34;:23},&#34;citation_issued&#34;:{&#34;1&#34;:207,&#34;2&#34;:209,&#34;3&#34;:256,&#34;4&#34;:181,&#34;5&#34;:111,&#34;6&#34;:84,&#34;7&#34;:1,&#34;None&#34;:16},&#34;warning_issued&#34;:{&#34;1&#34;:141,&#34;2&#34;:155,&#34;3&#34;:151,&#34;4&#34;:138,&#34;5&#34;:67,&#34;6&#34;:57,&#34;7&#34;:0,&#34;None&#34;:23},&#34;counts&#34;:{&#34;1&#34;:1158,&#34;2&#34;:1338,&#34;3&#34;:968,&#34;4&#34;:1158,&#34;5&#34;:571,&#34;6&#34;:1004,&#34;7&#34;:2,&#34;None&#34;:166},&#34;arrest%&#34;:{&#34;1&#34;:17.3,&#34;2&#34;:19.0,&#34;3&#34;:11.7,&#34;4&#34;:12.9,&#34;5&#34;:10.5,&#34;6&#34;:18.5,&#34;7&#34;:0.0,&#34;None&#34;:13.9},&#34;warning%&#34;:{&#34;1&#34;:12.2,&#34;2&#34;:11.6,&#34;3&#34;:15.6,&#34;4&#34;:11.9,&#34;5&#34;:11.7,&#34;6&#34;:5.7,&#34;7&#34;:0.0,&#34;None&#34;:13.9}}&#39;</pre>
 </div>
 
 </div>
