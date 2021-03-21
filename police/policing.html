@@ -1,0 +1,136 @@
+<!doctype html>
+
+<html>
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {text-align: center;}
+h3 {text-align: center; padding-top: 50px}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+<body>
+  <h1>Denver Policing Data</h1>
+  <p>Let's explore policing outcomes in different policing districts in Denver. Using a policing dataset from the month of November 2012, we can look at the percentage of police stops that end in arrest, and police stops end with just a warning. Here is an image showing the different police districts.</p>
+  <img src="https://clark-m.github.io/police/precinct.jpg" class="center" style="width:500px;height:300px;">
+  <h3>Percentage of Stops Ending in Arrest</h3>
+<p>The chart below shows how many police stops (vehicle and pedestrian) ended up in an arrest. Each bar represents a defferent police districts</p>
+
+
+</body>
+</html>
+
+<canvas id="myChart1"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+$.getJSON("https://clark-m.github.io/police/police_data_arrests.json", function(data_from_file){
+
+    var ctx = document.getElementById('myChart1').getContext('2d');
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: ['District 1, West Colfax/LoHi', 'District 2, East Colfax/5 Points', 'District 3, Wash Park, Cherry Creek', 'District 4, South Federal Blvd/Harvey Park', 'District 5, Central Park, Montebello', 'District 6, Downtown'],
+            datasets: [{
+                label: 'Percentage of stops ending in arrest',
+                backgroundColor: 'rgb(200, 70, 80)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [data_from_file["1"], data_from_file["2"], data_from_file["3"], data_from_file["4"], data_from_file["5"], data_from_file["6"]],
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+        scales: {
+                yAxes: [{
+                    display: true,
+                    stacked: true,
+                    ticks: {
+                        min: 0, // minimum value
+                        max: .20 // maximum value
+                    }
+                }]
+            }
+        }
+    });
+
+})
+</script>
+
+<html>
+<style>
+h1 {text-align: center;}
+h3 {text-align: center; padding-top: 50px}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+<body>
+  <h3>Percentage of Stops Ending with a Warning</h3>
+<p>The chart below shows how many police stops (vehicle and pedestrian) ended up with just a warning. Each bar represents a defferent police districts</p>
+
+
+</body>
+</html>
+
+<canvas id="myChart2"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+$.getJSON("https://clark-m.github.io/police/police_data_warnings.json", function(data_from_file){
+
+    var ctx = document.getElementById('myChart2').getContext('2d');
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: ['District 1, West Colfax/LoHi', 'District 2, East Colfax/5 Points', 'District 3, Wash Park, Cherry Creek', 'District 4, South Federal Blvd/Harvey Park', 'District 5, Central Park, Montebello', 'District 6, Downtown'],
+            datasets: [{
+                label: 'Percentage of stops ending in a warning',
+                backgroundColor: 'rgb(25, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [data_from_file["1"], data_from_file["2"], data_from_file["3"], data_from_file["4"], data_from_file["5"], data_from_file["6"]],
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+        scales: {
+                yAxes: [{
+                    display: true,
+                    stacked: true,
+                    ticks: {
+                        min: 0, // minimum value
+                        max: .20 // maximum value
+                    }
+                }]
+            }
+        }
+    });
+
+})
+
+</script>
+
+<body>
+  <h3>Analysis</h3>
+<p>The two charts offer interesting insights. it appears there are clearly districts where arrests are more likely to occur during police stops, primarily district 6, Downtown and district 2, the East Colfax/5 Points area. Downtown, 18% of stops ended with an arrest, compared to 11% in the far more affluent Cherry Creek/Wash Park area. Even more interesting, if you look at police stops that end with the individual being let off with a warning, we see a different story. A mere 5% of stops occuring downtown end with a warning, but in the more affluent area of Cherry Creek/Wash Park, we see 15% of police stops ending with the individual being let off on a warning. </p>
+<p>It's hard not to look at these charts and think come to the conclusion that more affluent areas are policed more leniently than areas that have a higher homeless/low income population. However, more research would need to be done to soundly come to this conclusion. For example, it would be interesting to add and compare average income with this analysis to gain additional insights. Also, we could look further into the individual districts and investigate arrest rates in the individual precincts that make up each district. </p>
+
+<p>The code used to conduct this analysis can be found here: </p>
+
+
+</body>
