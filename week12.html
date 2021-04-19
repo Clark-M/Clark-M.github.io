@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Weekly Assignment #12</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/moon.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+
+		<!-- Loading Vega-->
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#94aed6">
+					<h2>Weekly Assignment #12</h3>
+						<p>Clark Mousaw</p>
+						<p style="font-size:70%;">a quick overview of life lost during the LA riots</p>
+				</section>
+
+				<section data-background="#94aed6">
+						<p style="font-size:70%;">Following the aquittal of 4 LAPD officers that nearly beat Rodney King to death, unrest broke out in the streets of Los Angeles in 1992. 64 people were killed.</p>
+						<img src="https://ca-times.brightspotcdn.com/dims4/default/1c1a4bd/2147483647/strip/true/crop/2048x1152+0+0/resize/840x473!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F2b%2F77%2Fb710b8bd2d2ea636af59e6057f27%2Fla-1492526961-om5mywhe4j-snap-image"  height="400" width="600">
+				</section>
+
+			<section>
+				<section data-background="#94aed6">
+					<h2>Life Lost by Race</h2>
+					<p> The chart below breaks down lives lost by race</p>
+					<div id="vis-bar"></div>
+					<script type="text/javascript">
+					var spec = {
+						"width": 600,
+						"height": 200,
+						"data": {
+							"url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/la-riots.csv"
+						},
+						"view":{"fill":"lightgrey"},
+						"width":500,
+						"height":300,
+						"mark": "bar",
+						"encoding": {
+							"x": {
+								"title":"Race of Deceased",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "race",
+								"type":"nominal"
+							},
+							"y": {
+								"aggregate": "count",
+								"title":"Number of Deaths",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "type",
+								"type":"nominal"
+							},
+
+						}
+						};
+					var opt = {"renderer": "canvas", "actions": false};
+					vegaEmbed("#vis-bar", spec, opt);
+					</script>
+					<p style="font-size:60%;">Interpretation: The data shows that out of the 64 people killed, Black individuals were killed most during the riots, followed by Latinos.</p>
+				</section>
+
+				<section data-background="#94aed6">
+					<h2>Visualization Tutorial</h2>
+					<p style="font-size:70%;">Scroll through code below for Vega visualization code. Y axis was aggregated to show totals of deaths by race. Font sizes are customized for better readability</p>
+					<pre><code data-trim class='js'>
+						...
+						"view":{"fill":"lightgrey"},
+						"width":500,
+						"height":300,
+						"mark": "bar",
+						"encoding": {
+							"x": {
+								"title":"Race of Deceased",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "race",
+								"type":"nominal"
+							},
+							"y": {
+								"aggregate": "count",
+								"title":"Number of Deaths",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "type",
+								"type":"nominal"
+								}
+					</code></pre>
+
+					</script>
+				</section>
+
+
+			</section>
+
+			<section>
+				<section data-background="#94aed6">
+					<h2>Cause of Death by Race</h2>
+					<p>This chart breaks down the cause of death for each race</p>
+					<div id="vis-bar2"></div>
+					<script type="text/javascript">
+					var spec = {
+						"width": 600,
+						"height": 200,
+						"data": {
+							"url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/la-riots.csv"
+						},
+						"view":{"fill":"lightgrey"},
+						"width":500,
+						"height":300,
+						"mark": "bar",
+						"encoding": {
+							"x": {
+								"title":"Race of Deceased",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "race",
+								"type":"nominal"
+							},
+							"y": {
+								"aggregate": "count",
+								"title":"Number of Deaths",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "type",
+								"type":"nominal"
+							},
+							"column": {
+								"field": "type",
+								"type": "quantitative",
+								"bin": {
+									"maxbins": 15
+								},
+								"spacing": 10
+							},
+							"color": {
+								"field": "type",
+								"type": "nominal"
+							}
+						}
+						};
+					var opt = {"renderer": "canvas", "actions": false};
+					vegaEmbed("#vis-bar2", spec, opt);
+					</script>
+					<p style="font-size:60%;">Interpretation: Upon further inspection of the data, we see that homicides carried out by other people (not police related) are distributed fairly equally across white, latino, and black individuals. We can also see that only black and latino individuals were killed by police involved shootings. No white or asian individuals were killed by police officers. </p>
+				</section>
+
+				<section data-background="#94aed6">
+					<h2>Visualization Tutorial</h2>
+					<p style="font-size:70%;">Scroll through code below to see how the above visualization was made. Y axis was again aggregated to show totals of deaths by race. A facet was added to this visualization to break down the cause of death by each race, instead of just the totals. A "facet" was added by specifying the "column" property, then the field is specified to indicate the value from the dataset. </p>
+					<pre><code data-trim class='js'>
+						...
+						"view":{"fill":"lightgrey"},
+						"width":500,
+						"height":300,
+						"mark": "bar",
+						"encoding": {
+							"x": {
+								"title":"Race of Deceased",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "race",
+								"type":"nominal"
+							},
+							"y": {
+								"aggregate": "count",
+								"title":"Number of Deaths",
+								"axis":{
+									"labelFontSize":15
+								},
+								"field": "type",
+								"type":"nominal"
+							},
+							"column": {
+								"field": "type",
+								"type": "quantitative",
+								"bin": {
+									"maxbins": 15
+								}
+					</code></pre>
+
+					</script>
+				</section>
+
+			</section>
+
+
+
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+				<script>
+					// More info about initialization & config:
+					// - https://revealjs.com/initialization/
+					// - https://revealjs.com/config/
+					Reveal.initialize({
+						hash: true,
+						slideNumber: 'h/v',
+						// Learn about plugins: https://revealjs.com/plugins/
+						plugins: [ RevealHighlight ]
+					});
+				</script>
+			</body>
+		</html>
